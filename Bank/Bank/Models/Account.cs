@@ -20,7 +20,7 @@ namespace Bank
 
         public bool Withdraw (double value)
         {
-            if(value > Balance + Credit)
+            if(Balance - value < (Credit *-1))
             {
                 Console.WriteLine("Saldo insuficiente!");
                 return false;
@@ -54,7 +54,7 @@ namespace Bank
             accountDetails += "Nome: " + Name + " | ";
             accountDetails += "Saldo: " + Balance + " | ";
             accountDetails += "Crédito: " + Credit;
-            return base.ToString();
+            return accountDetails;
         }
     }
 }
